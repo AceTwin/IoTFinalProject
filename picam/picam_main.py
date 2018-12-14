@@ -4,6 +4,8 @@ import requests
 import json
 import datetime
 
+//Resource: https://sysadmins.co.za/using-python-to-interact-with-the-rocketchat-api/
+
 uri = 'http://192.168.3.1:3000/hooks/r9CNJs8hpYKxe53np/yNvsbryGk4YJGfcptALtHAj6aJKofXz9Z5MdhH2g7cdYQSnw'
 
 # The callback for when the client receives a CONNACK response from the server.
