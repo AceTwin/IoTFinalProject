@@ -1,6 +1,11 @@
-//Test code is based on https://www.instructables.com/id/Use-a-DIY-Pressure-Plate-Switch-to-Automate-Your-H/
+/*References:
+Code is based on https://www.instructables.com/id/Use-a-DIY-Pressure-Plate-Switch-to-Automate-Your-H/
 //Except I am doing a pull down
-//Combined code with parts of the magnet_sensor_MQTT.ino code and sonic.ino code from IoTLab4
+Combined code with parts of the magnet_sensor_MQTT.ino code and sonic.ino code from IoTLab4
+  https://techtutorialsx.com/2017/04/09/esp8266-connecting-to-mqtt-broker/
+  https://www.learnrobotics.org/blog/how-to-configure-node-red-and-wemos-d1-mini-using-mqtt/
+  https://www.baldengineer.com/mqtt-tutorial.html
+*/
 
 #include <ESP8266WiFi.h>
 #include <WiFiClient.h>
