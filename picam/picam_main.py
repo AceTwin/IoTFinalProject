@@ -2,6 +2,8 @@ from picamera import PiCamera
 import paho.mqtt.client as mqtt
 import requests
 import json
+import datetime
+
 uri = 'http://192.168.3.1:3000/hooks/r9CNJs8hpYKxe53np/yNvsbryGk4YJGfcptALtHAj6aJKofXz9Z5MdhH2g7cdYQSnw'
 
 # The callback for when the client receives a CONNACK response from the server.
@@ -26,13 +28,17 @@ def on_message(client, userdata, msg):
 
 def imagepost():
     camera = PiCamera()
-    camera.capture('image.jpg')
+    filename = "image"+str(datetime.datetime.now().strftime('%Y_%m_%d_%H_%M_%S'))+".jpg"
+    print(filename)
+    camera.capture(filename)
+    camera.close()
+    print("Image saved as: "+filename)
     data={}
     data = {
         "attachments": [
             {
                 "text":"Hello",
-                "image_url":"http://192.168.3.44:8000/image.jpg",
+                "image_url":"http://192.168.3.44:8000/"+filename,
                 "color":"#764FA5"
             }
         ]
